@@ -1,0 +1,73 @@
+<mp-toptips msg="{{errorMsg}}" type="error" show="{{showTopTips}}">
+  
+
+</mp-toptips>
+<view class="page">
+
+  <view class="page__bd">
+    <mp-form id="form" rules="{{rules}}" models="{{formData}}">
+      <mp-cells title="表单">
+        <mp-cell prop="qq" title="会议主题" ext-class="">
+          <input bindinput="formInputChange" data-field="qq" class="weui-input" placeholder="请填写会议主题" />
+        </mp-cell>
+
+        <mp-cell prop="qq" title="参会人数" ext-class="">
+          <input bindinput="formInputChange" data-field="qq" class="weui-input" placeholder="请填写参会人数" />
+        </mp-cell>
+
+        <mp-cell prop="date" title="会议时间" ext-class="">
+          <picker data-field="date" mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01"
+            bindchange="bindDateChange">
+            <view class="weui-input">{{date}}</view>
+          </picker>
+        </mp-cell>
+
+      </mp-cells>
+      
+
+    </mp-form>
+
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_select">
+        <view class="weui-cell__bd">
+          <picker bindchange="bindAccountChange" value="{{accountIndex}}" range="{{accounts1}}">
+            <view class="weui-select">{{accounts1[accountIndex]}}</view>
+          </picker>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_select">
+        <view class="weui-cell__bd">
+          <picker bindchange="bindAccountChange" value="{{accountIndex}}" range="{{accounts2}}">
+            <view class="weui-select">{{accounts2[accountIndex]}}</view>
+          </picker>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_select">
+        <view class="weui-cell__bd">
+          <picker bindchange="bindAccountChange" value="{{accountIndex}}" range="{{accounts3}}">
+            <view class="weui-select">{{accounts3[accountIndex]}}</view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">是否需要投影</view>
+        <view class="weui-cell__ft">
+          <switch checked />
+        </view>
+      </view>
+    </view>
+    <mp-cells title="推荐会议室">
+        <mp-checkbox-group prop="radio" multi="{{false}}" bindchange="radioChange">
+          <mp-checkbox wx:for="{{checkboxItems}}" wx:key="value" label="{{item.name}}" value="{{item.value}}"
+            checked="{{item.checked}}"></mp-checkbox>
+        </mp-checkbox-group>
+      </mp-cells>
+
+
+    <view class="weui-btn-area">
+      <button class="weui-btn" type="primary" bindtap="submitForm">提交会议申请</button>
+    </view>
+  </view>
+</view>

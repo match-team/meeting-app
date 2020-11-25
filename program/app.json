@@ -1,13 +1,17 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/createMetting/mettingSucess/mettingSuccess",
+    "pages/createMetting/createMetting",
+    "pages/calendar/calendar",
+    "pages/logs/logs",
+    "pages/selectPeople/selectPeople"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle":"black"
+    "navigationBarTitleText": "会议管理小程序",
+    "navigationBarTextStyle": "black"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

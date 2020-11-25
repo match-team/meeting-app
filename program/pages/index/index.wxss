@@ -1,21 +1,79 @@
-/**index.wxss**/
-.userinfo {
+.page {
+  padding: 20rpx;
+}
+
+.weui-panel,
+.page_title {
+  margin: 30rpx 0;
+}
+
+.create-metting {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  padding: 30rpx;
+  background-color: #fff;
+
+  width: 100%;
+
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.create-metting button:first-child {
+  margin-right: 30rpx;
+  width: 400rpx;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.create-metting button:last-child {
+  flex: 1;
 }
 
-.usermotto {
-  margin-top: 200px;
+.mask {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-color: #000000;
+  /* IE6和部分IE7内核的浏览器(如QQ浏览器)下颜色被覆盖 */
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  /*宽度设置为100%，这样才能使隐藏背景层覆盖原页面*/
+  height: 100%;
+  filter: alpha(opacity=60);
+  /*设置透明度为60%*/
+
+  z-Index: 999;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.mask_title {
+  display: flex;
+  justify-content: space-between;
+  background: #cc0000;
+  border-radius: 10rpx;
+  width: 90%;
+  margin: 30rpx auto;
+  font-size: 30rpx;
+  padding: 20rpx;
+  color: #fff;
+
+}
+.mask_container{
+  background: #cc0000;
+  border-radius: 10rpx;
+  width: 90%;
+  margin: 30rpx auto;
+  font-size: 30rpx;
+  padding: 20rpx;
+  color: #fff;
+  opacity: 0;
+  transition: all .2s;
+}
+.icon_down{
+  transform: rotate(90deg);
+}
+.mask_container_show{
+  opacity: 1;
 }

@@ -1,13 +1,41 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+<view class="mask" wx:if="{{closeAll}}">
+  
+  <view class="mask_title" bindtap="handleOpenList">
+    <text>你有1个会议冲突待处理</text>
+    <mp-icon class="{{OpenTodolist?'':'icon_down'}}" icon="arrow" color="white" size="{{14}}"></mp-icon>
+    
 </view>
+<view class="mask_container {{OpenTodolist?'mask_container_show':''}}">
+  <view wx:for="{{Todolist}}" wx:key="index">{{item}}</view>
+  <view bindtap="closeAll">关闭</view>
+</view>
+</view>
+<view class="page" data-weui-theme="{{theme}}">
+  <view class="page_title">我的会议</view>
+	<view class="page__bd">
+		<view class="weui-panel">
+			<view class="weui-panel__bd">
+				<view class="weui-media-box weui-media-box_text">
+					<h4 class="weui-media-box__title">会议主题</h4>
+          <view class="weui-media-box__desc">时间：2020/111/20 11:30-12:20</view>
+          <view class="weui-media-box__desc">会议室：B303室</view>
+				</view>
+      </view>
+    </view>
+    <view class="weui-panel">
+     <view class="weui-panel__bd">
+       <view class="weui-media-box weui-media-box_text">
+         <h4 class="weui-media-box__title">会议主题</h4>
+         <view class="weui-media-box__desc">时间：2020/111/20 11:30-12:20</view>
+         <view class="weui-media-box__desc">会议室：B303室</view>
+       </view>
+     </view>
+   </view>
+  </view>
+
+ 
+</view>
+<view class="create-metting">
+    <button type="primary" bindtap="createMetting">创建会议</button>
+    <button type="default" bindtap="handleCalendar">日历</button>
+    </view>

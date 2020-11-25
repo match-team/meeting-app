@@ -1,0 +1,18 @@
+.container_top{
+  text-align: center;
+  background-color:#fff ;
+  padding: 50rpx 0;
+}
+.success_tip{
+  font-weight: bold;
+  font-size:36rpx;
+  margin: 30rpx 0;
+}
+.container_bot{
+  margin-top: 40rpx;
+  background-color:#fff ;
+  padding: 30rpx;
+}
+.container_bot view{
+  margin: 20rpx 0;
+}
