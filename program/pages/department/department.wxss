@@ -1,0 +1,23 @@
+.help_item{
+  background-color: #fff;
+
+}
+.help_title{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  padding:  20rpx;
+  border-bottom: 1px solid #eee;
+}
+.help_title_icon{
+  display: flex;
+}
+.detail{
+  background-color: #f5f5f5;
+  padding: 10rpx 30rpx;
+  display: flex;
+}
+.attend-metting{
+  width: 80%!important;
+  margin: 90rpx auto;
+}

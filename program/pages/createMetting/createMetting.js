@@ -1,4 +1,6 @@
-// pages/createMetting/createMetting.js
+const util=require('../../utils/util')
+var dateTimePicker = require('../../utils/datePicker')
+console.log(util)
 Page({
 
   /**
@@ -7,7 +9,9 @@ Page({
   data: {
     errorMsg:'',
     showTopTips: false,
-   
+    dateTime:'',
+    dateTimeArray:'',
+    startT:'',
     radioItems: [{
         name: 'cell standard',
         value: '0',
@@ -72,7 +76,7 @@ Page({
       },
     ],
 
-    date: "2016-09-01",
+    date: util.formatTime(new Date()),
     time: "12:01",
 
     countryCodes: ["+86", "+80", "+84", "+87"],
@@ -239,12 +243,30 @@ Page({
     // })
   },
 
-
+  changeDateTime(e) {
+    this.setData({
+      dateTime: e.detail.value
+    })
+    var startT = dateTimePicker.formatPickerDateTime(this.data.dateTimeArray, this.data.dateTime)
+    this.setData({
+      startT: startT
+    })
+  },
+ 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var start = util.formatTime(new Date())
+    var obj = dateTimePicker.dateTimePicker(new Date().getFullYear(),new Date().getFullYear(),start);
+    this.setData({
+        dateTime: obj.dateTime,
+        dateTimeArray: obj.dateTimeArray
+    });
+    var startT = dateTimePicker.formatPickerDateTime(this.data.dateTimeArray,this.data.dateTime)
+    this.setData({
+        startT: startT
+    })
   },
 
   /**

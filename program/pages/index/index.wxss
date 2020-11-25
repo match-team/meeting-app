@@ -77,3 +77,18 @@
 .mask_container_show{
   opacity: 1;
 }
+.weui-panel{
+  position: relative;
+}
+.badage{
+  text-align: center;
+  color:#fff;
+  padding: 10rpx 0;
+  font-size: 24rpx;
+  position: absolute;
+  width: 80px;
+  top: 0;
+  right:0;
+  border-radius: 0 10rpx 0 30rpx;
+  background-color: #cc0000;
+}

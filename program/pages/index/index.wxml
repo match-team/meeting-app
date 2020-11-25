@@ -13,7 +13,8 @@
 <view class="page" data-weui-theme="{{theme}}">
   <view class="page_title">我的会议</view>
 	<view class="page__bd">
-		<view class="weui-panel">
+		<view class="weui-panel" bindtap="goDetail">
+      <view class="badage">会议冲突</view>
 			<view class="weui-panel__bd">
 				<view class="weui-media-box weui-media-box_text">
 					<h4 class="weui-media-box__title">会议主题</h4>
@@ -23,6 +24,7 @@
       </view>
     </view>
     <view class="weui-panel">
+      <view class="badage">会议变更</view>
      <view class="weui-panel__bd">
        <view class="weui-media-box weui-media-box_text">
          <h4 class="weui-media-box__title">会议主题</h4>

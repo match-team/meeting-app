@@ -1,8 +1,11 @@
 {
   "pages": [
+    "pages/metting-change/metting-change",
     "pages/index/index",
-    "pages/createMetting/mettingSucess/mettingSuccess",
+    "pages/index/metting-detail/metting-detail",
+    "pages/department/department",
     "pages/createMetting/createMetting",
+    "pages/createMetting/mettingSucess/mettingSuccess",
     "pages/calendar/calendar",
     "pages/logs/logs",
     "pages/selectPeople/selectPeople"

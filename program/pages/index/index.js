@@ -8,6 +8,11 @@ Page({
     OpenTodolist:true,
     Todolist:['你有 1 个会议冲突待处理','你有 2 个会议即将开始','你有 1 个会议申请变更待处理','你有 1 个会议申请变更成功']
   },
+  goDetail(){
+    wx.navigateTo({
+      url: '/pages/index/metting-detail/metting-detail',
+    })
+  },
   createMetting(){
     wx.navigateTo({
       url: '/pages/createMetting/createMetting',

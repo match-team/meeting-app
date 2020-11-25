@@ -1,5 +1,5 @@
 <mp-toptips msg="{{errorMsg}}" type="error" show="{{showTopTips}}">
-  
+
 
 </mp-toptips>
 <view class="page">
@@ -15,15 +15,23 @@
           <input bindinput="formInputChange" data-field="qq" class="weui-input" placeholder="请填写参会人数" />
         </mp-cell>
 
-        <mp-cell prop="date" title="会议时间" ext-class="">
-          <picker data-field="date" mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01"
-            bindchange="bindDateChange">
-            <view class="weui-input">{{date}}</view>
+        <mp-cell prop="date" title="开始时间" ext-class="">
+
+
+          <picker mode="multiSelector" value="{{dateTime}}" bindchange="changeDateTime" range="{{dateTimeArray}}">
+            <view>{{startT}}</view>
+          </picker>
+
+
+        </mp-cell>
+        <mp-cell prop="date" title="结束时间" ext-class="">
+          <picker mode="multiSelector" value="{{dateTime}}" bindchange="changeDateTime" range="{{dateTimeArray}}">
+            <view>{{startT}}</view>
           </picker>
         </mp-cell>
 
       </mp-cells>
-      
+
 
     </mp-form>
 
@@ -59,11 +67,11 @@
       </view>
     </view>
     <mp-cells title="推荐会议室">
-        <mp-checkbox-group prop="radio" multi="{{false}}" bindchange="radioChange">
-          <mp-checkbox wx:for="{{checkboxItems}}" wx:key="value" label="{{item.name}}" value="{{item.value}}"
-            checked="{{item.checked}}"></mp-checkbox>
-        </mp-checkbox-group>
-      </mp-cells>
+      <mp-checkbox-group prop="radio" multi="{{false}}" bindchange="radioChange">
+        <mp-checkbox wx:for="{{checkboxItems}}" wx:key="value" label="{{item.name}}" value="{{item.value}}"
+          checked="{{item.checked}}"></mp-checkbox>
+      </mp-checkbox-group>
+    </mp-cells>
 
 
     <view class="weui-btn-area">
