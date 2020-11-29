@@ -1,14 +1,14 @@
 {
   "pages": [
-    "pages/metting-change/metting-change",
     "pages/index/index",
-    "pages/index/metting-detail/metting-detail",
-    "pages/department/department",
-    "pages/createMetting/createMetting",
-    "pages/createMetting/mettingSucess/mettingSuccess",
-    "pages/calendar/calendar",
-    "pages/logs/logs",
-    "pages/selectPeople/selectPeople"
+    "pages/News/News",
+    "pages/Inventory/Inventory",
+    
+    "pages/Scrap/Scrap",
+    "pages/Inventory/InventoryDetail/confirm/confirm",
+    "pages/Inventory/InventoryDetail/InventoryDetail",
+    "pages/Scrap/scrapApply/scrapApply"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

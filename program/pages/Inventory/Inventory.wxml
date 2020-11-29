@@ -1,0 +1,54 @@
+<view class="weui-panel" wx:for="{{list}}" wx:key="index" data-detail="{{item.checkDetails}}" bindtap="goDetail">
+  <view class="weui-panel__hd">{{item.name}} {{item.createTime}}</view>
+  <view class="panel__bd">
+    <view>
+      <view class="panel_bd_icon"><text>待盘点</text>
+        <mp-icon icon="arrow" color="black" size="{{10}}"></mp-icon>
+      </view>
+      <view>{{item.dcl}}</view>
+    </view>
+    <view>
+      <view class="panel_bd_icon"><text>已盘点</text>
+        <mp-icon icon="arrow" color="black" size="{{10}}"></mp-icon>
+      </view>
+      <view>{{item.ycl}}</view>
+    </view>
+    <view>
+      <view class="panel_bd_icon"><text>盘盈</text>
+        <mp-icon icon="arrow" color="black" size="{{10}}"></mp-icon>
+      </view>
+      <view>201</view>
+    </view>
+    <view>
+      <view class="panel_bd_icon"><text>盘亏</text>
+        <mp-icon icon="arrow" color="black" size="{{10}}"></mp-icon>
+      </view>
+      <view>201</view>
+    </view>
+
+
+  </view>
+  <view class="panel__bd">
+    <view>
+      <view>创建人</view>
+      <view>{{item.createUserid}}</view>
+    </view>
+    <view>
+      <view>盘点总数</view>
+      <view>201</view>
+    </view>
+
+
+
+  </view>
+  <view class="panel__datewrap">
+    <view class="panel_date">
+      <view style="margin-bottom:10px">
+        <view class="panel__circle"></view>
+        创建日期 {{item.createTime}}
+      </view>
+      <view class="panel__circle" style="bottom:0;border:2px solid #07c160"></view>
+      <view>完成日期 2018-10-19</view>
+    </view>
+  </view>
+</view>

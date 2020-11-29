@@ -1,0 +1,15 @@
+function formatStatus(image) {
+  var mm;
+  if (status == 0) {
+    mm == '待处理'
+  } else if (status == 1) {
+    mm == '通过'
+  } else {
+    mm == '拒绝'
+  }
+  return mm
+}
+
+module.exports = {
+  formatStatus:formatStatus
+}

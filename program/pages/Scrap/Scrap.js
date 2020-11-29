@@ -1,34 +1,37 @@
+import { requestModel } from "../../models/index"
+
+const scrapModel = new requestModel()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    closeAll: true,
-    OpenTodolist: true,
-
+    current:1,
+    size:10,
+    list:[]
   },
-
-  handleInventory() {
+  goDetail(){
     wx.navigateTo({
-      url: '/pages/Inventory/Inventory',
-    })
-  },
-  handleScrap() {
-    wx.navigateTo({
-      url: '/pages/Scrap/Scrap',
-    })
-  },
-  handleNews() {
-    wx.navigateTo({
-      url: '/pages/News/News',
+      url: '/pages/Scrap/scrapApply/scrapApply',
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    scrapModel.getScrapList({current:this.data.current,size:this.data.size}).then(res=>{
+      if(res.success){
+       this.setData({
+         list:res.detail.records
+       })
+      }else{
+        wx.showToast({
+          title: res.msg,
+          icon:'none'
+        })
+      }
+    })
   },
 
   /**

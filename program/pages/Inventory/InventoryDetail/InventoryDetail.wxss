@@ -1,0 +1,6 @@
+@import '../Inventory.wxss';
+.invetory_btn{
+
+  width: 90%!important;
+  margin: 60rpx auto;
+}

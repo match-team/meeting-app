@@ -1,32 +1,18 @@
+// pages/Scrap/scrapApply/scrapApply.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    closeAll: true,
-    OpenTodolist: true,
 
   },
 
-  handleInventory() {
+  handleAgree(){
     wx.navigateTo({
-      url: '/pages/Inventory/Inventory',
+      url: '/pages/Scrap/scrapApply/mettingSucess/mettingSuccess',
     })
   },
-  handleScrap() {
-    wx.navigateTo({
-      url: '/pages/Scrap/Scrap',
-    })
-  },
-  handleNews() {
-    wx.navigateTo({
-      url: '/pages/News/News',
-    })
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
 
   },

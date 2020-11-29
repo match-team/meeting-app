@@ -1,43 +1,21 @@
-<view class="mask" wx:if="{{closeAll}}">
-  
-  <view class="mask_title" bindtap="handleOpenList">
-    <text>你有1个会议冲突待处理</text>
-    <mp-icon class="{{OpenTodolist?'':'icon_down'}}" icon="arrow" color="white" size="{{14}}"></mp-icon>
-    
+<view class="wrap">
+  <image src="../../images/banner.png"
+    mode="widthFix" class="banner"
+    ></image>
 </view>
-<view class="mask_container {{OpenTodolist?'mask_container_show':''}}">
-  <view wx:for="{{Todolist}}" wx:key="index">{{item}}</view>
-  <view bindtap="closeAll">关闭</view>
-</view>
-</view>
-<view class="page" data-weui-theme="{{theme}}">
-  <view class="page_title">我的会议</view>
-	<view class="page__bd">
-		<view class="weui-panel" bindtap="goDetail">
-      <view class="badage">会议冲突</view>
-			<view class="weui-panel__bd">
-				<view class="weui-media-box weui-media-box_text">
-					<h4 class="weui-media-box__title">会议主题</h4>
-          <view class="weui-media-box__desc">时间：2020/111/20 11:30-12:20</view>
-          <view class="weui-media-box__desc">会议室：B303室</view>
-				</view>
-      </view>
-    </view>
-    <view class="weui-panel">
-      <view class="badage">会议变更</view>
-     <view class="weui-panel__bd">
-       <view class="weui-media-box weui-media-box_text">
-         <h4 class="weui-media-box__title">会议主题</h4>
-         <view class="weui-media-box__desc">时间：2020/111/20 11:30-12:20</view>
-         <view class="weui-media-box__desc">会议室：B303室</view>
-       </view>
-     </view>
-   </view>
-  </view>
 
- 
+
+<view class="icon_wrap">
+  <view bindtap="handleNews">
+    <image src="../../images/icon3.png"></image>
+    <view>消息</view>
+  </view>
+  <view bindtap="handleInventory">
+    <image src="../../images/icon2.png"></image>
+    <view>盘点</view>
+  </view>
+  <view bindtap="handleScrap">
+    <image src="../../images/icon1.png"></image>
+    <view>审批</view>
+  </view>
 </view>
-<view class="create-metting">
-    <button type="primary" bindtap="createMetting">创建会议</button>
-    <button type="default" bindtap="handleCalendar">日历</button>
-    </view>

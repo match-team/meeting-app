@@ -1,0 +1,15 @@
+
+.panel{
+  width: 90%;
+  margin: 20rpx auto;
+   background-color: #f00;
+   padding: 20rpx;
+   border-radius: 10rpx;
+   
+   color:#fff;
+}
+.title{
+  padding: 10rpx 0;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10rpx;
+}

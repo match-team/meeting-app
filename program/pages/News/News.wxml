@@ -1,0 +1,8 @@
+<!-- <wxs module="filter" src="../../utils/filter.wxs"></wxs> -->
+<view class="panel" bindtap="goDetail" wx:for="{{list}}" wx:key="index">
+	<view class="title">报废提醒</view>
+	<view>报废日期:{{item.usedDate}}</view>
+	<view>资产名称:{{item.goodsName}}</view>
+	<view>资产编号:{{item.goodsNum}}</view>
+	
+	</view>

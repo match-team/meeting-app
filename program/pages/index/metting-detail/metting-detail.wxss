@@ -1,9 +1,0 @@
-.weui-cell{
-  padding:20rpx;
-  font-size: 30rpx;
-}
-.weui-cells__title{
-  margin: 0;
-  padding: 20rpx ;
-
-}

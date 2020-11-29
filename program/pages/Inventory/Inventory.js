@@ -1,36 +1,45 @@
+import { requestModel } from "../../models/index"
+
+const inventoryModel = new requestModel()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    closeAll: true,
-    OpenTodolist: true,
-
+    limit:10,
+    page:1,
+    list:[]
   },
 
-  handleInventory() {
-    wx.navigateTo({
-      url: '/pages/Inventory/Inventory',
-    })
-  },
-  handleScrap() {
-    wx.navigateTo({
-      url: '/pages/Scrap/Scrap',
-    })
-  },
-  handleNews() {
-    wx.navigateTo({
-      url: '/pages/News/News',
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    inventoryModel.getInventoryList({limit:this.data.limit,page:this.data.page}).then(res=>{
+      if(res.success){
+        
+        this.setData({
+          list:res.detail.records
+        })
+      }else{
+        wx.showToast({
+          title: res.msg,
+          icon:'none'
+        })
+      }
+    })
   },
+  goDetail(e){
+    
+    let goodsId=e.currentTarget.dataset.detail[0].goodsId
+    console.log(e.currentTarget.dataset.detail[0].goodsId)
 
+    wx.navigateTo({
+      
+      url: '/pages/Inventory/InventoryDetail/InventoryDetail?goodId='+goodsId
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

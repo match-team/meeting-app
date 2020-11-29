@@ -1,0 +1,4 @@
+<view class="container_top">
+  <mp-icon icon="done2" color="#07c160" size="{{60}}"></mp-icon>
+<view class="success_tip">会议创建成功</view>
+</view>

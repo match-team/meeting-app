@@ -1,29 +1,13 @@
+// pages/Inventory/InventoryDetail/confirm/confirm.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    closeAll: true,
-    OpenTodolist: true,
 
   },
 
-  handleInventory() {
-    wx.navigateTo({
-      url: '/pages/Inventory/Inventory',
-    })
-  },
-  handleScrap() {
-    wx.navigateTo({
-      url: '/pages/Scrap/Scrap',
-    })
-  },
-  handleNews() {
-    wx.navigateTo({
-      url: '/pages/News/News',
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */

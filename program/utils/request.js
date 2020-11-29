@@ -12,7 +12,8 @@ export class HTTP_REQUEST {
 
   _request(url, resolve, reject, data = {}, method = 'GET') {
     wx.request({
-      url: config.api_base_url + url,
+      // url: config.api_base_url + url,
+      url:  url,
       method: method,
       data: data,
       header: {
@@ -30,8 +31,6 @@ export class HTTP_REQUEST {
         }
       },
       fail: err => {
-        jjjjjj
-
         reject()
         this._show_error(1)
       }
