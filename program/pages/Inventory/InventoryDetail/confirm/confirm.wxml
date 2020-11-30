@@ -1,58 +1,64 @@
 <view class="weui-cells weui-cells_after-title">
   <view class="weui-cell">
     <view class="weui-cell__bd">状态</view>
-    <view class="weui-cell__ft">已盘点</view>
+    <view class="weui-cell__ft">{{checkdata.status==0?'待处理':(checkdata.status==1?'正常':'异常')}}</view>
   </view>
   <view class="weui-cell">
-    <view class="weui-cell__bd">资产名称</view>
-    <view class="weui-cell__ft">23333423233</view>
+    <view class="weui-cell__bd">资产编号</view>
+    <view class="weui-cell__ft">{{goods.goodsNum}}</view>
   </view>
   <view class="weui-cell">
     <view class="weui-cell__bd">资产类别</view>
-    <view class="weui-cell__ft">23</view>
+    <view class="weui-cell__ft">{{goods.goodsType}}</view>
   </view>
   <view class="weui-cell">
     <view class="weui-cell__bd">资产名称</view>
-    <view class="weui-cell__ft">B230会议室</view>
+    <view class="weui-cell__ft">{{goods.goodsName}}</view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">标准型号</view>
+    <view class="weui-cell__ft">{{goods.standardModel}}</view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">规格型号</view>
+    <view class="weui-cell__ft">{{goods.specsModel}}</view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">计量单位</view>
+    <view class="weui-cell__ft">{{goods.meteringUnit}}</view>
   </view>
 </view>
 
 
-<view class="weui-cells__title">指定部门</view>
+<!-- <view class="weui-cells__title">指定部门</view>
 <view class="weui-cells weui-cells_after-title">
   <view class="weui-cell">
     <view class="weui-cell__bd">标准型号</view>
     <view class="weui-cell__ft">杨尚文</view>
   </view>
-  <view class="weui-cell">
-    <view class="weui-cell__bd">规格型号</view>
-    <view class="weui-cell__ft">韩闯</view>
-  </view>
-  <view class="weui-cell">
-    <view class="weui-cell__bd">计量单位</view>
-    <view class="weui-cell__ft">韩闯</view>
-  </view>
-  
-</view>
+</view> -->
 
 
 <view class="weui-cells__title">指定部门</view>
 <view class="weui-cells weui-cells_after-title">
   <view class="weui-cell">
     <view class="weui-cell__bd">所属公司</view>
-    <view class="weui-cell__ft">杨尚文</view>
+    <view class="weui-cell__ft">{{applyRecord.company}}</view>
   </view>
   <view class="weui-cell">
     <view class="weui-cell__bd">使用部门</view>
-    <view class="weui-cell__ft">韩闯</view>
+    <view class="weui-cell__ft">{{applyRecord.department}}</view>
   </view>
   <view class="weui-cell">
     <view class="weui-cell__bd">使用人</view>
-    <view class="weui-cell__ft">韩闯</view>
+    <view class="weui-cell__ft">{{applyRecord.ownerId}}</view>
   </view>
   
 </view>
-<view class="confirm_btn">
-  <button type="primary">确认</button>
-  <button type="warn">异常</button>
+<view class="confirm_btn" hidden="{{buttonHiddle}}">
+  <button type="primary" bindtap="detailHandle" data-status='1'>确认</button>
+  <button type="warn"  bindtap="detailHandle" data-status='2'>异常</button>
 </view>          
+<view class="confirm_btn" hidden="{{!buttonHiddle}}">
+  <button type="primary" bindtap="goback" >返回</button>
+</view> 

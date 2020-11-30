@@ -1,39 +1,18 @@
-import { requestModel } from "../../models/index"
-
-const scrapModel = new requestModel()
+// pages/newsDetail/newsDetail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    current:1,
-    size:10,
-    list:[]
+
   },
-  goDetail(e){
-    let item =e.currentTarget.dataset.item;
-    wx.navigateTo({
-      url: '/pages/News/newsDetail/newsDetail?item='+JSON.stringify(item),
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    scrapModel.getNewList({current:this.data.current,size:this.data.size}).then(res=>{
-      console.log(res)
-      if(res.success){
-       this.setData({
-         list:res.detail.records
-       })
-      }else{
-        wx.showToast({
-          title: res.msg,
-          icon:'none'
-        })
-      }
-    })
+
   },
 
   /**

@@ -1,0 +1,41 @@
+<wxs module="filter" src="../../../utils/filter.wxs"></wxs>
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">报废日期</view>
+    <view class="weui-cell__ft">{{item.usedDate}}</view>
+  </view>
+  
+</view>
+
+<view class="weui-cells__title">报废资产</view>
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">资产编号</view>
+    <view class="weui-cell__ft">{{goods.goodsNum}}</view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">资产名称</view>
+    <view class="weui-cell__ft">{{goods.goodsName}}</view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">资产类别</view>
+    <view class="weui-cell__ft">{{goods.goodsType}}</view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">所属公司</view>
+    <view class="weui-cell__ft">{{goods.ownerCompany}}</view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">购入时间</view>
+    <view class="weui-cell__ft">{{goods.buyTime}}</view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">规格型号</view>
+    <view class="weui-cell__ft">{{goods.specsModel}}</view>
+  </view>
+</view>
+
+     
+<view class="confirm_btn">
+  <button type="primary" bindtap="goback" >返回</button>
+</view>          

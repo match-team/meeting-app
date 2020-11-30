@@ -18,7 +18,7 @@ Page({
   onLoad: function (options) {
     inventoryModel.getInventoryList({limit:this.data.limit,page:this.data.page}).then(res=>{
       if(res.success){
-        
+        //console.log(res);
         this.setData({
           list:res.detail.records
         })
@@ -31,14 +31,21 @@ Page({
     })
   },
   goDetail(e){
-    
-    let goodsId=e.currentTarget.dataset.detail[0].goodsId
-    console.log(e.currentTarget.dataset.detail[0].goodsId)
-
-    wx.navigateTo({
-      
-      url: '/pages/Inventory/InventoryDetail/InventoryDetail?goodId='+goodsId
-    })
+   // console.log(e.currentTarget.dataset.item);
+    if(e.currentTarget.dataset.item.checkDetails.length>0){
+    //  let id=e.currentTarget.dataset.item.id;
+      let item = e.currentTarget.dataset.item;
+      wx.navigateTo({
+        url: '/pages/Inventory/InventoryDetail/InventoryDetail?item='+JSON.stringify(item)
+      })
+    } else{
+        wx.showToast({
+          title: '无需盘点',
+          icon: 'none',
+          duration: 2000
+        })
+    }
+  
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

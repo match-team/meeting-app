@@ -1,29 +1,30 @@
+<wxs module="filter" src="../../../utils/filter.wxs"></wxs>
 <view class="weui-panel">
-  <view class="weui-panel__hd">资产盘点单10181017</view>
+  <view class="weui-panel__hd">资产盘点单 {{checkdata.id}}</view>
   <view class="panel__bd">
     <view>
       <view class="panel_bd_icon"><text>待盘点</text>
         <mp-icon icon="arrow" color="black" size="{{10}}"></mp-icon>
       </view>
-      <view>201</view>
+      <view>{{checkdata.dcl}}</view>
     </view>
     <view>
-      <view class="panel_bd_icon"><text>待盘点</text>
+      <view class="panel_bd_icon"><text>已盘点</text>
         <mp-icon icon="arrow" color="black" size="{{10}}"></mp-icon>
       </view>
-      <view>201</view>
+      <view>{{checkdata.ycl}}</view>
     </view>
     <view>
-      <view class="panel_bd_icon"><text>待盘点</text>
+      <view class="panel_bd_icon"><text>盘盈</text>
         <mp-icon icon="arrow" color="black" size="{{10}}"></mp-icon>
       </view>
-      <view>201</view>
+      <view>0</view>
     </view>
     <view>
-      <view class="panel_bd_icon"><text>待盘点</text>
+      <view class="panel_bd_icon"><text>盘亏</text>
         <mp-icon icon="arrow" color="black" size="{{10}}"></mp-icon>
       </view>
-      <view>201</view>
+      <view>0</view>
     </view>
 
 
@@ -31,11 +32,11 @@
   <view class="panel__bd">
     <view>
       <view>创建人</view>
-      <view>东方钢铁</view>
+      <view>{{checkdata.createUserName}}</view>
     </view>
     <view>
       <view>盘点总数</view>
-      <view>201</view>
+      <view>{{checkdata.checkDetails.length}}</view>
     </view>
 
   </view>
@@ -45,27 +46,27 @@
     <view class="panel_date">
       <view style="margin-bottom:10px">
         <view class="panel__circle"></view>
-        创建日期 2018-10-19
+        创建日期 {{checkdata.createTime}}
       </view>
       <view class="panel__circle" style="bottom:0;border:2px solid #07c160"></view>
-      <view>完成日期 2018-10-19</view>
+      <view>完成日期 {{checkdata.createTime}}</view>
     </view>
   </view>
 </view>
 
-<view class="weui-panel weui-panel_access" wx:for="{{3}}" wx:key="index">
-			<view class="weui-panel__hd">资产编码 20191010</view>
+<view class="weui-panel weui-panel_access" wx:for="{{checkdata.checkDetails}}" wx:key="index">
+			<view class="weui-panel__hd">资产编码 {{item.goodsId}}</view>
 			<view class="weui-panel__bd">
 				<a class="weui-media-box weui-media-box_appmsg">
 					<view class="weui-media-box__hd">
-						<image class="weui-media-box__thumb" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAMAAAAOusbgAAAAeFBMVEUAwAD///+U5ZTc9twOww7G8MYwzDCH4YcfyR9x23Hw+/DY9dhm2WZG0kbT9NP0/PTL8sux7LFe115T1VM+zz7i+OIXxhes6qxr2mvA8MCe6J6M4oz6/frr+us5zjn2/fa67rqB4IF13XWn6ad83nxa1loqyirn+eccHxx4AAAC/klEQVRo3u2W2ZKiQBBF8wpCNSCyLwri7v//4bRIFVXoTBBB+DAReV5sG6lTXDITiGEYhmEYhmEYhmEYhmEY5v9i5fsZGRx9PyGDne8f6K9cfd+mKXe1yNG/0CcqYE86AkBMBh66f20deBc7wA/1WFiTwvSEpBMA2JJOBsSLxe/4QEEaJRrASP8EVF8Q74GbmevKg0saa0B8QbwBdjRyADYxIhqxAZ++IKYtciPXLQVG+imw+oo4Bu56rjEJ4GYsvPmKOAB+xlz7L5aevqUXuePWVhvWJ4eWiwUQ67mK51qPj4dFDMlRLBZTqF3SDvmr4BwtkECu5gHWPkmDfQh02WLxXuvbvC8ku8F57GsI5e0CmUwLz1kq3kD17R1In5816rGvQ5VMk5FEtIiWislTffuDpl/k/PzscdQsv8r9qWq4LRWX6tQYtTxvI3XyrwdyQxChXioOngH3dLgOFjk0all56XRi/wDFQrGQU3Os5t0wJu1GNtNKHdPqYaGYQuRDfbfDf26AGLYSyGS3ZAK4S8XuoAlxGSdYMKwqZKM9XJMtyqXi7HX/CiAZS6d8bSVUz5J36mEMFDTlAFQzxOT1dzLRljjB6+++ejFqka+mXIe6F59mw22OuOw1F4T6lg/9VjL1rLDoI9Xzl1MSYDNHnPQnt3D1EE7PrXjye/3pVpr1Z45hMUdcACc5NVQI0bOdS1WA0wuz73e7/5TNqBPhQXPEFGJNV2zNqWI7QKBd2Gn6AiBko02zuAOXeWIXjV0jNqdKegaE/kJQ6Bfs4aju04lMLkA2T5wBSYPKDGF3RKhFYEa6A1L1LG2yacmsaZ6YPOSAMKNsO+N5dNTfkc5Aqe26uxHpx7ZirvgCwJpWq/lmX1hA7LyabQ34tt5RiJKXSwQ+0KU0V5xg+hZrd4Bn1n4EID+WkQdgLfRNtvil9SPfwy+WQ7PFBWQz6dGWZBLkeJFXZGCfLUjCgGgqXo5TuSu3cugdcTv/HjqnBTEMwzAMwzAMwzAMwzAMw/zf/AFbXiOA6frlMAAAAABJRU5ErkJggg==" alt></image>
+          <image class="weui-media-box__thumb" src="{{fileUrl+filter.getImgPath(item.goodsRecord.filePaths)}}" alt></image>
 					</view>
 					<view class="weui-media-box__bd" >
-						<h4 class="weui-media-box__title">三星打印机</h4>
-            <view class="weui-media-box__desc">资产分类：电子产品及通信设备</view>
-            <view class="weui-media-box__desc">单位：台</view>
-            <view class="weui-media-box__desc">SN号：2390323</view>
-            <view class="weui-media-box__desc">规格型号：SM80923</view>
+            <h4 class="weui-media-box__title">{{item.goodsRecord.goodsName}}</h4>
+            <view class="weui-media-box__desc">处理状态：{{item.status==0?'待处理':(item.status==1?'正常':'异常')}}</view>
+            <view class="weui-media-box__desc">资产分类：{{item.goodsRecord.goodsType}}</view>
+            <view class="weui-media-box__desc">单位：{{item.goodsRecord.meteringUnit}}</view>
+            <view class="weui-media-box__desc">规格型号：{{item.goodsRecord.specsModel}}</view>
 					</view>
 				</a>
 				

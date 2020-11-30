@@ -1,0 +1,37 @@
+.weui-cell{
+  padding:20rpx;
+  font-size: 30rpx;
+}
+.weui-cells__title{
+  margin: 0;
+  padding: 20rpx ;
+
+}
+.confirm_btn{
+  width: 90%;
+  margin: 40rpx auto;
+  display: flex;
+  justify-content: space-between;
+}
+.confirm_btn button{
+  width: 300rpx!important;
+}
+.wrap{
+  padding: 20rpx;
+}
+.banner{
+  width: 100%;
+}
+.icon_wrap image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.icon_wrap{
+  background-color: #fff;
+  text-align: center;
+  padding: 40rpx 0;
+  margin: 0 20rpx;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 20rpx;
+}

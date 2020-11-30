@@ -34,6 +34,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    base_url:'http://10.60.17.43:8080/gdzcgl',
+  //base_url:"http://localhost"
   }
 })

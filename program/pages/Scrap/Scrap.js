@@ -11,9 +11,18 @@ Page({
     size:10,
     list:[]
   },
-  goDetail(){
+  goDetail(e){
+    let item =e.currentTarget.dataset.item;
+    if(item.status !=0){
+      wx.showToast({
+        title: '已处理',
+        icon:'none',
+        duration:2000
+      })
+      return
+    }
     wx.navigateTo({
-      url: '/pages/Scrap/scrapApply/scrapApply',
+      url: '/pages/Scrap/scrapApply/scrapApply?item='+JSON.stringify(item),
     })
   },
   /**
@@ -45,6 +54,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.onLoad();
 
   },
 

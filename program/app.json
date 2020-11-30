@@ -2,18 +2,20 @@
   "pages": [
     "pages/index/index",
     "pages/News/News",
+    "pages/News/newsDetail/newsDetail",
     "pages/Inventory/Inventory",
     
     "pages/Scrap/Scrap",
     "pages/Inventory/InventoryDetail/confirm/confirm",
     "pages/Inventory/InventoryDetail/InventoryDetail",
     "pages/Scrap/scrapApply/scrapApply"
+
     
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "会议管理小程序",
+    "navigationBarTitleText": "欧冶资产管理系统",
     "navigationBarTextStyle": "black"
   },
   "style": "v2",

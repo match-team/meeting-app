@@ -1,20 +1,73 @@
 // pages/Scrap/scrapApply/scrapApply.js
+import { requestModel } from "../../../models/index"
+const inventoryModel = new requestModel()
+let app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    item:{},
+    buttonHidden:false,
+    base_url:app.globalData.base_url
   },
 
-  handleAgree(){
-    wx.navigateTo({
-      url: '/pages/Scrap/scrapApply/mettingSucess/mettingSuccess',
+  handleAuditPass(e){
+    let id = e.currentTarget.dataset.id;
+    inventoryModel.destroyrecordAuditPass(id).then(res=>{
+        if(res.success){
+          wx.showToast({
+            title: '审核成功',
+            icon:'none',
+            duration:2000
+          })
+          this.setData({
+            buttonHidden:true
+          })
+        }else{
+          wx.showToast({
+            title: res.msg,
+            icon:'none',
+            duration:2000
+          })
+        }
+    })
+ 
+  },
+  handleAuditNoPass(e){
+    let id = e.currentTarget.dataset.id;
+    inventoryModel.destroyrecordAuditNoPass(id).then(res=>{
+      if(res.success){
+        wx.showToast({
+          title: '审核成功',
+          icon:'none',
+          duration:2000
+        })
+        this.setData({
+          buttonHidden:true
+        })
+      }else{
+        wx.showToast({
+          title: res.msg,
+          icon:'none',
+          duration:2000
+        })
+      }
+    })
+    // wx.navigateTo({
+    //   url: '/pages/Scrap/scrapApply/mettingSucess/mettingSuccess',
+    // })
+  },
+  goback(){
+    wx.navigateBack({
+      delta: 0,
     })
   },
   onLoad: function (options) {
-
+    this.setData({
+      item:JSON.parse(options.item)
+    })
   },
 
   /**

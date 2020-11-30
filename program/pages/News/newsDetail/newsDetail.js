@@ -1,38 +1,42 @@
-import { requestModel } from "../../models/index"
-
-const scrapModel = new requestModel()
+// pages/Scrap/scrapApply/scrapApply.js
+import { requestModel } from "../../../models/index"
+const inventoryModel = new requestModel()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    current:1,
-    size:10,
-    list:[]
+    item:{},
+    goods:{}
   },
-  goDetail(e){
-    let item =e.currentTarget.dataset.item;
-    wx.navigateTo({
-      url: '/pages/News/newsDetail/newsDetail?item='+JSON.stringify(item),
+  goback(){
+    wx.navigateBack({
+      delta: 0,
     })
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-    scrapModel.getNewList({current:this.data.current,size:this.data.size}).then(res=>{
-      console.log(res)
-      if(res.success){
-       this.setData({
-         list:res.detail.records
-       })
-      }else{
-        wx.showToast({
-          title: res.msg,
-          icon:'none'
-        })
-      }
+    let item = JSON.parse(options.item);
+    this.setData({
+      item:item
+    })
+    let param = {id:item.goodsId,size:1,current:1};
+    inventoryModel.getGoodsRecordList(param).then(res=>{
+       if(res.success){
+        let records = res.detail.records;
+        if(records.length>0){
+          this.setData({
+            goods:records[0]
+          })
+        }
+       }else{
+         wx.showToast({
+           title: res.msg,
+           duration:2000,
+           icon:'none'
+         })
+       }
+       
     })
   },
 

@@ -1,4 +1,4 @@
-<view class="weui-panel" wx:for="{{list}}" wx:key="index" data-detail="{{item.checkDetails}}" bindtap="goDetail">
+<view class="weui-panel" wx:for="{{list}}" wx:key="index" data-item="{{item}}"  bindtap="goDetail">
   <view class="weui-panel__hd">{{item.name}} {{item.createTime}}</view>
   <view class="panel__bd">
     <view>
@@ -17,13 +17,13 @@
       <view class="panel_bd_icon"><text>盘盈</text>
         <mp-icon icon="arrow" color="black" size="{{10}}"></mp-icon>
       </view>
-      <view>201</view>
+      <view>0</view>
     </view>
     <view>
       <view class="panel_bd_icon"><text>盘亏</text>
         <mp-icon icon="arrow" color="black" size="{{10}}"></mp-icon>
       </view>
-      <view>201</view>
+      <view>0</view>
     </view>
 
 
@@ -31,11 +31,11 @@
   <view class="panel__bd">
     <view>
       <view>创建人</view>
-      <view>{{item.createUserid}}</view>
+      <view>{{item.createUserName}}</view>
     </view>
     <view>
       <view>盘点总数</view>
-      <view>201</view>
+      <view>{{item.checkDetails.length}}</view>
     </view>
 
 
@@ -48,7 +48,7 @@
         创建日期 {{item.createTime}}
       </view>
       <view class="panel__circle" style="bottom:0;border:2px solid #07c160"></view>
-      <view>完成日期 2018-10-19</view>
+      <view>完成日期 {{item.createTime}}</view>
     </view>
   </view>
 </view>
